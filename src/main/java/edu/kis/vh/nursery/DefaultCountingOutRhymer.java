@@ -2,11 +2,11 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    public static final int INT = -1;
-    public static final int Max = 12;
-    private int[] numbers = new int[Max];
+    public static final int EMPTY_INDICATOR = -1;
+    private static final int MAX_SIZE = 12;
+    private int[] numbers = new int[MAX_SIZE];
 
-    public int total = INT;
+    private int total = EMPTY_INDICATOR;
 
     public void countIn(int in) {
         if (!isFull())
@@ -14,7 +14,7 @@ public class DefaultCountingOutRhymer {
     }
 
     public boolean isEmpty() {
-        return total == INT;
+        return total == EMPTY_INDICATOR;
     }
 
     public boolean isFull() {
@@ -23,14 +23,18 @@ public class DefaultCountingOutRhymer {
 
     protected int peek() {
         if (isEmpty())
-            return INT;
+            return EMPTY_INDICATOR;
         return numbers[total];
     }
 
     public int countOut() {
         if (isEmpty())
-            return INT;
+            return EMPTY_INDICATOR;
         return numbers[total--];
+    }
+
+    public int getTotal() {
+        return total;
     }
 
 }

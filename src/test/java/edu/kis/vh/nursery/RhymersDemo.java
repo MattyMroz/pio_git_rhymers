@@ -16,6 +16,7 @@ class RhymersDemo {
         DefaultCountingOutRhymer[] rhymers = { factory.getStandardRhymer(), factory.getFalseRhymer(),
                 factory.getFIFORhymer(), factory.getHanoiRhymer()};
 
+        // TODO: magiczne liczby w pętlach bez wyjaśnienia ich znaczenia
         for (int i = 1; i < 15; i++)
             for (int j = 0; j < 3; j++)
                 rhymers[j].countIn(i);
@@ -24,12 +25,14 @@ class RhymersDemo {
         for (int i = 1; i < 15; i++)
             rhymers[3].countIn(rn.nextInt(20));
 
+        // TODO: używanie indeksów liczbowych zamiast nazwanych stałych
         for (int i = 0; i < rhymers.length; i++) {
             while (!rhymers[i].isEmpty())
                 System.out.print(rhymers[i].countOut() + "  ");
             System.out.println();
         }
 
+        // TODO: rzutowanie obiektu - potencjalne problemy z utrzymaniem kodu
         System.out.println("total rejected is "
                 + ((HanoiRhymer) rhymers[3]).reportRejected());
     }

@@ -10,6 +10,7 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
 
     @Override
     public void countIn(int in) {
+        // TODO: brak komentarza wyjaśniającego logikę biznesową (dlaczego odrzucamy elementy większe od peek)
         if (!isEmpty() && in > peek())
             totalRejected++;
         else

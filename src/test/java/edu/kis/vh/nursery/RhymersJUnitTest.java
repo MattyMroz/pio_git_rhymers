@@ -19,6 +19,7 @@ public class RhymersJUnitTest {
     public void testCallCheck() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
         boolean result = rhymer.isEmpty();
+        // TODO: lepiej używać assertTrue/assertFalse zamiast assertEquals(true/false, result)
         Assert.assertEquals(true, result);
 
         rhymer.countIn(888);
@@ -31,6 +32,7 @@ public class RhymersJUnitTest {
     public void testIsFull() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
         final int STACK_CAPACITY = 12;
+        // TODO: błąd w teście - STACK_CAPACITY powinno być zgodne z MAX_SIZE w DefaultCountingOutRhymer
         for (int i = 0; i < STACK_CAPACITY; i++) {
             boolean result = rhymer.isFull();
             Assert.assertEquals(false, result);
@@ -45,6 +47,7 @@ public class RhymersJUnitTest {
     public void testPeekaboo() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
         final int EMPTY_STACK_VALUE = -1;
+        // TODO: EMPTY_STACK_VALUE powinno odnosić się do stałej EMPTY_INDICATOR z DefaultCountingOutRhymer
 
         int result = rhymer.peek();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
@@ -62,6 +65,7 @@ public class RhymersJUnitTest {
     public void testCountOut() {
         DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
         final int EMPTY_STACK_VALUE = -1;
+        // TODO: EMPTY_STACK_VALUE powinno odnosić się do stałej EMPTY_INDICATOR z DefaultCountingOutRhymer
 
         int result = rhymer.countOut();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);

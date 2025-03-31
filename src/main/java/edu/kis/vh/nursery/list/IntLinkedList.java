@@ -7,6 +7,7 @@ public class IntLinkedList {
     private static class Node {
         private final int value;
         private Node prev;
+        // TODO: brak pola next, a istnieje metoda setNext
 
         public Node(int i) {
             value = i;
@@ -25,6 +26,7 @@ public class IntLinkedList {
         }
 
         public void setNext(Node next) {
+            // TODO: metoda nie implementuje żadnej funkcjonalności, a jest wywoływana
         }
     }
 
@@ -34,6 +36,7 @@ public class IntLinkedList {
         else {
             Node newNode = new Node(i);
             newNode.setPrev(last);
+            // TODO: wywołanie metody setNext, która nic nie robi
             last.setNext(newNode);
             last = newNode;
         }
@@ -44,17 +47,20 @@ public class IntLinkedList {
     }
 
     public boolean isFull() {
+        // TODO: metoda zawsze zwraca false, można rozważyć usunięcie lub dodanie logiki
         return false;
     }
 
     public int top() {
         if (isEmpty())
+            // TODO: używanie magicznej liczby -1 zamiast stałej jak w DefaultCountingOutRhymer
             return -1;
         return last.getValue();
     }
 
     public int pop() {
         if (isEmpty())
+            // TODO: używanie magicznej liczby -1 zamiast stałej jak w DefaultCountingOutRhymer
             return -1;
         int ret = last.getValue();
         last = last.getPrev();

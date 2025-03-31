@@ -13,6 +13,7 @@ public class DefaultRhymersFactory implements RhymersFactory {
 
     @Override
     public DefaultCountingOutRhymer getFalseRhymer() {
+        // TODO: metoda getFalseRhymer zwraca to samo co getStandardRhymer - możliwe że to błąd
         return new DefaultCountingOutRhymer();
     }
 

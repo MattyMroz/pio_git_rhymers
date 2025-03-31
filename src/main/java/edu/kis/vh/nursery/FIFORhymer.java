@@ -6,6 +6,7 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
 
     @Override
     public int countOut() {
+        // TODO: metoda countOut jest nieefektywna - przepisuje wszystkie elementy do temp i z powrotem
         while (!isEmpty())
             temp.countIn(super.countOut());
 
